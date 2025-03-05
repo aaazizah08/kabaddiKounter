@@ -6,11 +6,16 @@ class ScoreViewModel:ViewModel() {
     var scoreA: Int = 0
     var scoreB: Int = 0
 
-    fun incrementScore(isTeamA: Boolean){
+    fun incrementScore(isTeamA: Boolean) {
         if (isTeamA) {
             scoreA++
         } else {
             scoreB++
         }
     }
+
+        fun resetScore() {
+            scoreA = 0
+            scoreB = 0
+        }
 }
