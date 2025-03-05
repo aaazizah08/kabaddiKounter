@@ -14,8 +14,8 @@ class ScoreViewModel:ViewModel() {
         }
     }
 
-        fun resetScore() {
-            scoreA = 0
-            scoreB = 0
-        }
+    fun resetScore() {
+        scoreA = 0
+        scoreB = 0
+    }
 }
