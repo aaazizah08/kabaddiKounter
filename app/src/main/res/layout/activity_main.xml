@@ -2,137 +2,143 @@
 <layout>
     <data>
         <variable
-        name="viewModel"
-        type="com.example.kabaddikounter.ScoreViewModel" />
+            name="viewModel"
+            type="com.example.kabaddikounter.ScoreViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/label_teamA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Team A"
-        android:textColor="#555555"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283"/>
+        <TextView
+            android:id="@+id/label_teamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team A"
+            android:textColor="#555555"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.224"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.283"/>
 
-    <TextView
-        android:id="@+id/scoreA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        app:layout_constraintTop_toBottomOf="@+id/label_teamA"
-        app:layout_constraintStart_toStartOf="@+id/label_teamA"
-        app:layout_constraintEnd_toEndOf="@+id/label_teamA"/>
+        <TextView
+            android:id="@+id/scoreA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.scoreA)}"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/label_teamA"
+            app:layout_constraintStart_toStartOf="@+id/label_teamA"
+            app:layout_constraintEnd_toEndOf="@+id/label_teamA"/>
 
-    <TextView
-        android:id="@+id/label_teamB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Team B"
-        android:textSize="24sp"
-        android:textColor="#555555"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284" />
+        <TextView
+            android:id="@+id/label_teamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team B"
+            android:textSize="24sp"
+            android:textColor="#555555"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.775"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.284" />
 
-    <TextView
-        android:id="@+id/scoreB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        app:layout_constraintTop_toBottomOf="@+id/label_teamB"
-        app:layout_constraintStart_toStartOf="@+id/label_teamB"
-        app:layout_constraintEnd_toEndOf="@+id/label_teamB"/>
+        <TextView
+            android:id="@+id/scoreB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.scoreB)}"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/label_teamB"
+            app:layout_constraintStart_toStartOf="@+id/label_teamB"
+            app:layout_constraintEnd_toEndOf="@+id/label_teamB"/>
 
-    <View
-        android:id="@+id/garis_tengah"
-        android:layout_width="2dp"
-        android:layout_height="200dp"
-        android:background="#999999"
-        app:layout_constraintBottom_toBottomOf="@+id/scoreB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_teamA"
-        app:layout_constraintVertical_bias="0.339" />
+        <View
+            android:id="@+id/garis_tengah"
+            android:layout_width="2dp"
+            android:layout_height="200dp"
+            android:background="#999999"
+            app:layout_constraintBottom_toBottomOf="@+id/scoreB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_teamA"
+            app:layout_constraintVertical_bias="0.339" />
 
-    <Button
-        android:id="@+id/buttonPlusOneA"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="+1"
-        android:backgroundTint="@color/purple"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/scoreA"
-        app:layout_constraintStart_toStartOf="@+id/scoreA"
-        app:layout_constraintEnd_toEndOf="@+id/scoreA"/>
+        <Button
+            android:id="@+id/buttonPlusOneA"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="+1"
+            android:backgroundTint="@color/purple"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.incrementScore(true)}"
+            app:layout_constraintTop_toBottomOf="@+id/scoreA"
+            app:layout_constraintStart_toStartOf="@+id/scoreA"
+            app:layout_constraintEnd_toEndOf="@+id/scoreA"/>
 
-    <Button
-        android:id="@+id/buttonPlusTwoA"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="+2"
-        android:backgroundTint="@color/purple"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlusOneA"
-        app:layout_constraintStart_toStartOf="@+id/buttonPlusOneA"
-        app:layout_constraintEnd_toEndOf="@+id/buttonPlusOneA"/>
+        <Button
+            android:id="@+id/buttonPlusTwoA"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="+2"
+            android:backgroundTint="@color/purple"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.incrementScore(true, 2)}"
+            app:layout_constraintTop_toBottomOf="@+id/buttonPlusOneA"
+            app:layout_constraintStart_toStartOf="@+id/buttonPlusOneA"
+            app:layout_constraintEnd_toEndOf="@+id/buttonPlusOneA"/>
 
-    <Button
-        android:id="@+id/buttonPlusOneB"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="+1"
-        android:backgroundTint="@color/purple"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/scoreB"
-        app:layout_constraintStart_toStartOf="@+id/scoreB"
-        app:layout_constraintEnd_toEndOf="@+id/scoreB"/>
+        <Button
+            android:id="@+id/buttonPlusOneB"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="+1"
+            android:backgroundTint="@color/purple"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.incrementScore(false)}"
+            app:layout_constraintTop_toBottomOf="@+id/scoreB"
+            app:layout_constraintStart_toStartOf="@+id/scoreB"
+            app:layout_constraintEnd_toEndOf="@+id/scoreB"/>
 
-    <Button
-        android:id="@+id/buttonPlusTwoB"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="+2"
-        android:backgroundTint="@color/purple"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlusOneB"
-        app:layout_constraintStart_toStartOf="@+id/buttonPlusOneB"
-        app:layout_constraintEnd_toEndOf="@+id/buttonPlusOneB"/>
+        <Button
+            android:id="@+id/buttonPlusTwoB"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="+2"
+            android:backgroundTint="@color/purple"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.incrementScore(false, 2)}"
+            app:layout_constraintTop_toBottomOf="@+id/buttonPlusOneB"
+            app:layout_constraintStart_toStartOf="@+id/buttonPlusOneB"
+            app:layout_constraintEnd_toEndOf="@+id/buttonPlusOneB"/>
 
-    <Button
-        android:id="@+id/buttonReset"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="RESET"
-        android:backgroundTint="@color/purple"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlusTwoA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:backgroundTint="@color/purple"
+            android:textColor="@android:color/white"
+            android:onClick="@{() -> viewModel.resetScore()}"
+            app:layout_constraintTop_toBottomOf="@+id/buttonPlusTwoA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

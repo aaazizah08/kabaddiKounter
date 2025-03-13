@@ -1,21 +1,27 @@
 package com.example.kabaddikounter
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ScoreViewModel:ViewModel() {
-    var scoreA: Int = 0
-    var scoreB: Int = 0
+class ScoreViewModel : ViewModel() {
+
+    private val _scoreA = MutableLiveData(0)
+    val scoreA: LiveData<Int> = _scoreA
+
+    private val _scoreB = MutableLiveData(0)
+    val scoreB: LiveData<Int> = _scoreB
 
     fun incrementScore(isTeamA: Boolean, value: Int = 1) {
         if (isTeamA) {
-            scoreA += value
+            _scoreA.value = (_scoreA.value ?: 0) + value
         } else {
-            scoreB += value
+            _scoreB.value = (_scoreB.value ?: 0) + value
         }
     }
 
     fun resetScore() {
-        scoreA = 0
-        scoreB = 0
+        _scoreA.value = 0
+        _scoreB.value = 0
     }
 }
